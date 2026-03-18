@@ -34,6 +34,7 @@ MOSS‑TTS 家族是由 [MOSI.AI](https://mosi.cn/#hero) 与 [OpenMOSS 团队](h
 
 <a id="news"></a>
 ## 新闻
+* 2026.3.18：🚀 在配套仓库 [`OpenMOSS/llama.cpp`](https://github.com/OpenMOSS/llama.cpp/tree/moss-tts-firstclass) 中新增了 first-class MOSS-TTS `llama.cpp` 实现，提供 GGUF backbone 推理与 ONNX 音频编解码器解码的端到端可运行链路。可从 [first-class e2e 指南](https://github.com/OpenMOSS/llama.cpp/blob/moss-tts-firstclass/docs/moss-tts-firstclass-e2e_zh.md) 开始。
 * 2026.3.16：📘 新增 MossTTSLocal 架构微调教程，适用于 MOSS-TTS-Local-Transformer！
 * 2026.3.12：🚀 新增面向 `MossTTSDelay` 架构的 SGLang 后端支持，可用于 MOSS-TTS（Delay）和 MOSS-SoundEffect 的高效推理，生成吞吐可提升约 **3 倍**！
 * 2026.3.11：📘 新增 MossTTSDelay 架构微调教程，适用于 MOSS-TTS（Delay）、MOSS-TTSD、MOSS-VoiceGenerator 和 MOSS-SoundEffect！
@@ -350,6 +351,10 @@ with torch.no_grad():
 ## llama.cpp 后端（无 PyTorch 推理）
 
 MOSS-TTS 支持使用 [llama.cpp](https://github.com/ggerganov/llama.cpp) 运行 Qwen3 backbone，配合 ONNX Runtime / TensorRT 运行音频编解码器，实现 **完全无 PyTorch 依赖** 的轻量端侧推理。
+
+我们也在配套仓库 [`OpenMOSS/llama.cpp`](https://github.com/OpenMOSS/llama.cpp/tree/moss-tts-firstclass) 中维护了一条更新的 first-class MOSS-TTS 链路。与下方介绍的 legacy bridge 后端不同，这条链路把多通道 embedding、多输出头和 delay-pattern decode 直接放进了 `llama.cpp`。
+
+如需使用这条链路，请从 [first-class e2e 指南](https://github.com/OpenMOSS/llama.cpp/blob/moss-tts-firstclass/docs/moss-tts-firstclass-e2e_zh.md) 开始。
 
 ### 快速开始
 
