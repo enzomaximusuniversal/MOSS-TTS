@@ -32,6 +32,7 @@
 MOSS‑TTS Family is an open‑source **speech and sound generation model family** from [MOSI.AI](https://mosi.cn/#hero) and the [OpenMOSS team](https://www.open-moss.com/). It is designed for **high‑fidelity**, **high‑expressiveness**, and **complex real‑world scenarios**, covering stable long‑form speech, multi‑speaker dialogue, voice/character design, environmental sound effects, and real‑time streaming TTS.
 
 ## News
+* 2026.3.31: 📄 Our technical reports for [MOSS-TTSD](https://arxiv.org/pdf/2603.19739) and [MOSS-VoiceGenerator](https://arxiv.org/pdf/2603.28086) are now available on arXiv!
 * 2026.3.26: 📘 Added a tutorial on fine-tuning the MOSS-TTS-Realtime!
 * 2026.3.20: 📄 Our [technical report](https://arxiv.org/pdf/2603.18090) is now available on arXiv!
 * 2026.3.18: 🚀 Added a first-class MOSS-TTS `llama.cpp` implementation in the companion repository [`OpenMOSS/llama.cpp`](https://github.com/OpenMOSS/llama.cpp/tree/moss-tts-firstclass), including end-to-end docs and a runnable pipeline for GGUF backbone inference plus ONNX audio codec decoding. See the [first-class e2e guide](https://github.com/OpenMOSS/llama.cpp/blob/moss-tts-firstclass/docs/moss-tts-firstclass-e2e.md).
@@ -651,6 +652,26 @@ Models in MOSS-TTS Family are licensed under the Apache License 2.0.
       archivePrefix={arXiv},
       primaryClass={cs.SD},
       url={https://arxiv.org/abs/2603.18090}, 
+}
+
+@misc{zhang2026mossttsdtextspokendialogue,
+      title={MOSS-TTSD: Text to Spoken Dialogue Generation}, 
+      author={Yuqian Zhang and Donghua Yu and Zhengyuan Lin and Botian Jiang and Mingshu Chen and Yaozhou Jiang and Yiwei Zhao and Yiyang Zhang and Yucheng Yuan and Hanfu Chen and Kexin Huang and Jun Zhan and Cheng Chang and Zhaoye Fei and Shimin Li and Xiaogui Yang and Qinyuan Cheng and Xipeng Qiu},
+      year={2026},
+      eprint={2603.19739},
+      archivePrefix={arXiv},
+      primaryClass={cs.SD},
+      url={https://arxiv.org/abs/2603.19739}, 
+}
+
+@misc{huang2026mossvoicegeneratorcreaterealisticvoices,
+      title={MOSS-VoiceGenerator: Create Realistic Voices with Natural Language Descriptions}, 
+      author={Kexin Huang and Liwei Fan and Botian Jiang and Yaozhou Jiang and Qian Tu and Jie Zhu and Yuqian Zhang and Yiwei Zhao and Chenchen Yang and Zhaoye Fei and Shimin Li and Xiaogui Yang and Qinyuan Cheng and Xipeng Qiu},
+      year={2026},
+      eprint={2603.28086},
+      archivePrefix={arXiv},
+      primaryClass={cs.SD},
+      url={https://arxiv.org/abs/2603.28086}, 
 }
 ```
 

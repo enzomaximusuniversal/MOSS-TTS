@@ -34,6 +34,7 @@ MOSS‑TTS 家族是由 [MOSI.AI](https://mosi.cn/#hero) 与 [OpenMOSS 团队](h
 
 <a id="news"></a>
 ## 新闻
+* 2026.3.31: 📄 [MOSS-TTSD](https://arxiv.org/pdf/2603.19739) 和 [MOSS-VoiceGenerator](https://arxiv.org/pdf/2603.28086) 的技术报告现已在arXiv上发布！
 * 2026.3.26: 📘 新增 MOSS-TTS-Realtime 微调教程！
 * 2026.3.20: 📄 我们的[技术报告](https://arxiv.org/pdf/2603.18090)现已在arXiv上发布！
 * 2026.3.18：🚀 在配套仓库 [`OpenMOSS/llama.cpp`](https://github.com/OpenMOSS/llama.cpp/tree/moss-tts-firstclass) 中新增了 first-class MOSS-TTS `llama.cpp` 实现，提供 GGUF backbone 推理与 ONNX 音频编解码器解码的端到端可运行链路。可从 [first-class e2e 指南](https://github.com/OpenMOSS/llama.cpp/blob/moss-tts-firstclass/docs/moss-tts-firstclass-e2e_zh.md) 开始。
@@ -664,6 +665,26 @@ MOSS-TTS 家族中的模型使用 Apache License 2.0 许可证。
       archivePrefix={arXiv},
       primaryClass={cs.SD},
       url={https://arxiv.org/abs/2603.18090}, 
+}
+
+@misc{zhang2026mossttsdtextspokendialogue,
+      title={MOSS-TTSD: Text to Spoken Dialogue Generation}, 
+      author={Yuqian Zhang and Donghua Yu and Zhengyuan Lin and Botian Jiang and Mingshu Chen and Yaozhou Jiang and Yiwei Zhao and Yiyang Zhang and Yucheng Yuan and Hanfu Chen and Kexin Huang and Jun Zhan and Cheng Chang and Zhaoye Fei and Shimin Li and Xiaogui Yang and Qinyuan Cheng and Xipeng Qiu},
+      year={2026},
+      eprint={2603.19739},
+      archivePrefix={arXiv},
+      primaryClass={cs.SD},
+      url={https://arxiv.org/abs/2603.19739}, 
+}
+
+@misc{huang2026mossvoicegeneratorcreaterealisticvoices,
+      title={MOSS-VoiceGenerator: Create Realistic Voices with Natural Language Descriptions}, 
+      author={Kexin Huang and Liwei Fan and Botian Jiang and Yaozhou Jiang and Qian Tu and Jie Zhu and Yuqian Zhang and Yiwei Zhao and Chenchen Yang and Zhaoye Fei and Shimin Li and Xiaogui Yang and Qinyuan Cheng and Xipeng Qiu},
+      year={2026},
+      eprint={2603.28086},
+      archivePrefix={arXiv},
+      primaryClass={cs.SD},
+      url={https://arxiv.org/abs/2603.28086}, 
 }
 ```
 ## 星标历史数据
