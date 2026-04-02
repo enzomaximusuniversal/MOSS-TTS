@@ -72,6 +72,19 @@ MOSS-TTSD 和 MOSS-TTS 共用同一套 `prepare_data.py / sft.py`，格式也可
 - `reference` 中的 `null` 会在训练时保留为 `None`，不会被错误编码
 - 不需要额外的 `prompt_audio` 字段；自回归续写能力本身就包含在标准 teacher-forcing 训练里
 
+如果你使用的是 `OpenMOSS-Team/MOSS-TTSD-v1.0` 作为基座模型，最稳妥、最简单的做法是：**先把当前仓库 `moss_tts_delay` 目录下的 support `.py` 文件替换成 `OpenMOSS-Team/MOSS-TTSD-v1.0` Hugging Face 仓库中的同名版本，然后再做预处理、训练和推理。**
+
+即替换下面这些文件：
+
+- `processing_moss_tts.py`
+- `modeling_moss_tts.py`
+- `configuration_moss_tts.py`
+- `inference_utils.py`
+
+原因是：`OpenMOSS-Team/MOSS-TTSD-v1.0` 的 prompt 模板和部分实现细节，与当前仓库默认的 `moss_tts_delay` 版本并不完全一致。如果直接混用，训练后推理结果可能变成胡言乱语。
+
+同时请注意：`OpenMOSS-Team/MOSS-TTSD-v1.0` 使用的是 `n_vq = 16`，因此在 `prepare_data.py` 和训练阶段都建议显式传入 `--n-vq 16`，保证数据、训练和推理保持一致。
+
 ### 2.3 MOSS-SoundEffect
 
 MOSS-SoundEffect 同样共享这套流程，只需要把用户侧字段换成 `ambient_sound`：

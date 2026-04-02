@@ -72,6 +72,19 @@ Notes:
 - `null` entries inside `reference` are preserved as `None` during training and will not be encoded incorrectly
 - no extra `prompt_audio` field is required; autoregressive continuation is already learned through standard teacher-forcing training
 
+If you use `OpenMOSS-Team/MOSS-TTSD-v1.0` as the base model, the safest and simplest workflow is: **replace the support `.py` files under this repo's `moss_tts_delay` folder with the corresponding versions from the `OpenMOSS-Team/MOSS-TTSD-v1.0` Hugging Face repository before preprocessing, training, and inference.**
+
+To be specific, replacing:
+
+- `processing_moss_tts.py`
+- `modeling_moss_tts.py`
+- `configuration_moss_tts.py`
+- `inference_utils.py`
+
+The reason is that the prompt template and some implementation details in `OpenMOSS-Team/MOSS-TTSD-v1.0` are not exactly the same as the default `moss_tts_delay` version in this repo. If you mix them, a common failure mode is that the training loss looks normal but inference collapses into gibberish.
+
+Also note that `OpenMOSS-Team/MOSS-TTSD-v1.0` uses `n_vq = 16`, so we recommend explicitly passing `--n-vq 16` in both preprocessing and training to keep data preparation, training, and inference consistent.
+
 ### 2.3 MOSS-SoundEffect
 
 MOSS-SoundEffect uses the same pipeline, with `ambient_sound` as the user-side field:

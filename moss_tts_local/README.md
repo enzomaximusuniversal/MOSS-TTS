@@ -48,6 +48,17 @@ During inference, users can explicitly control the synthesis bitrate by selectin
 *   **Low Bitrate (e.g., $K=4$):** Faster generation, lower bandwidth, suitable for previews.
 *   **High Bitrate (e.g., $K=32$):** Maximum fidelity and SOTA reconstruction quality.
 
+Example: control the inference bitrate by setting `n_vq_for_inference`
+
+```python
+outputs = model.generate(
+    input_ids=input_ids,
+    attention_mask=attention_mask,
+    max_new_tokens=4096,
+    n_vq_for_inference=4,  # or 8, 16, 32  
+)
+```
+
 ---
 
 ## 4. Prediction Topology
